@@ -1,0 +1,71 @@
+/* General styles */
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 100;
+    padding: 100;
+    text-align: center;
+}
+
+header {
+    background-color: #7e107e6b;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Form styles */
+form {
+    max-width: 300px; /* Limit the form width */
+    margin: 0 auto; /* Center the form */
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+button {
+    background-color: #e0f17b;
+    color: #ce0909;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Ensure there's space between the button and the last input */
+}
+
+button:hover {
+    background-color: #7e107e6b;
+}

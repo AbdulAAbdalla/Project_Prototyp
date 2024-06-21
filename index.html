@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YnoVo Software Developers Ltd</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to YnoVo Software Developers Ltd </h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#about_us" onclick="showSection('about_us')">About Us</a></li>
+                <li><a href="#services" onclick="showSection('services')">Services</a></li>
+                <li><a href="#booking" onclick="showSection('booking')">Booking</a></li>
+                <li><a href="#enquiries" onclick="showSection('enquiries')">Enquiries</a></li>
+                <li><a href="#Contact_Us" onclick="showSection('Contact_Us')">Contact_Us</a></li>
+                <li><a href="#clients" onclick="showSection('clients')">Clients</a></li>
+            </ul>
+        </nav>
+    </header>
+        <main>
+        <section id="home" class="section">
+            <h2>Home</h2>
+            <p>YnoVo is a home of experienced Software Developers,committed to providing top-notch software solutions tailored to your preference.</p>
+            <p>Ever ready and synchronized,Our team is keen to excellence  with professional Web-Development</p> 
+            <p>Client's detailed information is the foundation upon which everything is anchored</p>
+            <p>We welcome you to interact with our page you can book or make an inquiry about our services</p>
+        </section>
+        
+        <section id="about_us" class="section" style="display:none;">
+            <h2>About Us</h2>
+            <p>We are a dedicated team of software developers committed to excellence.</p>
+            <p>YnoVo is a Tech-based company registered in Kenya to enhance Human Computer Interaction.</p>
+        </section>
+        
+        <section id="services" class="section" style="display:none;">
+            <h2>Our Services</h2>
+            <ul>
+                <li><a href="#software-engineering" onclick="showSection('software-engineering')">Software Engineering</a></li>
+                <li><a href="#web-development" onclick="showSection('web-development')">Web Development</a></li>
+                <li><a href="#securing-networks" onclick="showSection('securing-networks')">Securing Networks</a></li>
+                <li><a href="#consulting" onclick="showSection('consulting')">Consulting</a></li>
+            </ul>
+        </section>
+        
+        <section id="software-engineering" class="section" style="display:none;">
+            <h2>Software Engineering</h2>
+            <p>Details about software engineering services.</p>
+            <img src="Technology.png" alt="Software Engineering">
+            <nav>
+                <a href="#web-development" onclick="showSection('web-development')">Next: Web Development</a>
+            </nav>
+        </section>
+        
+        <section id="web-development" class="section" style="display:none;">
+            <h2>Web Development</h2>
+            <p>Details about web development services.</p>
+            <img src="path/to/web-development.jpg" alt="Web Development">
+            <nav>
+                <a href="#software-engineering" onclick="showSection('software-engineering')">Previous: Software Engineering</a> | 
+                <a href="#securing-networks" onclick="showSection('securing-networks')">Next: Securing Networks</a>
+            </nav>
+        </section>
+        
+        <section id="securing-networks" class="section" style="display:none;">
+            <h2>Securing Networks</h2>
+            <p>Details about securing networks services.</p>
+            <img src="path/to/securing-networks.jpg" alt="Securing Networks">
+            <nav>
+                <a href="#web-development" onclick="showSection('web-development')">Previous: Web Development</a> | 
+                <a href="#consulting" onclick="showSection('consulting')">Next: Consulting</a>
+            </nav>
+        </section>
+        
+        <section id="consulting" class="section" style="display:none;">
+            <h2>Consulting</h2>
+            <p>Details about consulting services.</p>
+            <img src="path/to/consulting.jpg" alt="Consulting">
+            <nav>
+                <a href="#securing-networks" onclick="showSection('securing-networks')">Previous: Securing Networks</a>
+            </nav>
+        
+        </section>
+            
+        <section id="Contact_Us" class="section" style="display:none;">
+            <h2>Contact_Us</h2>
+                <p><strong>Tel:</strong> +254 723684353</p>
+                <p><strong>Email:</strong> <a href="mailto:info@ynovosoftwares.co.ke">info@ynovosoftwares.co.ke</a></p>
+                <p><strong>Direction:</strong> China Center 17th floor Suite 15Red, Ngong Road - Nairobi, Kenya</p>
+            </section>
+
+        </section>
+        
+        <section id="booking" class="section" style="display:none;">
+            <h2>Booking</h2>
+            <form id="booking-form" method="POST" action="/booking">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                
+                <label for="gender">Gender:</label>
+                <div style="display: flex; align-items: center;">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+                </div>
+                
+                <label for="home-phone">Home Phone:</label>
+                <input type="tel" id="home-phone" name="homePhone" placeholder="Enter your home phone number">
+                
+                <label for="office-phone">Office Phone:</label>
+                <input type="tel" id="office-phone" name="officePhone" placeholder="Enter your office phone number">
+                
+                <label for="service">Service:</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="software-engineering">Software Engineering</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="securing-networks">Securing Networks</option>
+                    <option value="consulting">Consulting</option>
+                </select>
+                
+                <button type="submit">Book Now</button>
+                <button type="reset">Reset</button>
+            </form>
+        </section>
+        
+        <section id="enquiries" class="section" style="display:none;">
+            <h2>Make an Enquiry</h2>
+            <form id="enquiry-form">
+                <label for="enquiry-name">Name:</label>
+                <input type="text" id="enquiry-name" name="enquiry-name" placeholder="Enter your full name" required>
+                
+                <label for="enquiry-email">Email:</label>
+                <input type="email" id="enquiry-email" name="enquiry-email" placeholder="Enter your Email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Enter your message" required>></textarea>
+                
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+        </section>
+        
+        <section id="clients" class="section" style="display:none;">
+            <h2>Client Management</h2>
+            <p>Manage your clients and their projects efficiently.</p>
+            <div id="client-list"></div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
