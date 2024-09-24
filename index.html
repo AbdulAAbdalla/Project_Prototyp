@@ -3,157 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YnoVo Software Developers Ltd</title>
+    <title>YnoVo Software Developers</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to YnoVo Software Developers Ltd </h1>
-        <nav>
-            <ul>
-                <li><a href="#home" onclick="showSection('home')">Home</a></li>
-                <li><a href="#about_us" onclick="showSection('about_us')">About Us</a></li>
-                <li><a href="#services" onclick="showSection('services')">Services</a></li>
-                <li><a href="#booking" onclick="showSection('booking')">Booking</a></li>
-                <li><a href="#enquiries" onclick="showSection('enquiries')">Enquiries</a></li>
-                <li><a href="#Contact_Us" onclick="showSection('Contact_Us')">Contact_Us</a></li>
-                <li><a href="#clients" onclick="showSection('clients')">Clients</a></li>
-            </ul>
-        </nav>
+        <h1>Welcome to YnoVo Software Developers </h1>
+<nav>
+    <ul>
+        <li><a href="#home" onclick="showSection('home')">Home</a></li>
+        <li><a href="#about_us" onclick="showSection('about_us')">About Us</a></li>
+        <li><a href="#services" onclick="showSection('services')">Services</a></li>
+        <li><a href="#booking" onclick="checkLogin('booking')">Booking</a></li>
+        <li><a href="#enquiries" onclick="checkLogin('enquiries')">Enquiries</a></li>
+        <li><a href="#contact_us" onclick="showSection('contact_us')">Contact Us</a></li>
+        <li><a href="#clients" onclick="showSection('clients')">Clients</a></li>
+        <!-- Sign up/Sign in link, initially visible -->
+        <li><a href="#register" id="register-link" onclick="showSection('register')">register/Sign in</a></li>
+        <!-- Logout link, initially hidden -->
+        <li><a href="#logout" id="logout-link" class="hidden" onclick="logoutUser()">Logout</a></li> <!--hiding the logout section and oly will appear after registration-->
+
+
+    </ul>
+    
+</nav>
+
     </header>
-        <main>
-        <section id="home" class="section">
+
+    <main>
+        <!-- Main Content Sections -->
+        <section id="home" class="section hidden">
             <h2>Home</h2>
-            <p>YnoVo is a home of experienced Software Developers,committed to providing top-notch software solutions tailored to your preference.</p>
-            <p>Ever ready and synchronized,Our team is keen to excellence  with professional Web-Development</p> 
-            <p>Client's detailed information is the foundation upon which everything is anchored</p>
-            <p>We welcome you to interact with our page you can book or make an inquiry about our services</p>
+            <p>YnoVo is a home of experienced Software Developers, committed to providing top-notch software solutions tailored to your preference.</p>
+            <p>Boasting of an experienced synchronized Team, who are keen on excellence as an intended goal</p> 
+            <p>Client's detailed information is the foundation upon which every project,is anchored.</p>
+            <p>We welcome you to interact with our page; you can book or make an inquiry about our services and effect payment electronically.</p>
         </section>
-        
-        <section id="about_us" class="section" style="display:none;">
+
+        <section id="about_us" class="section hidden">
             <h2>About Us</h2>
             <p>We are a dedicated team of software developers committed to excellence.</p>
-            <p>YnoVo is a Tech-based company registered in Kenya to enhance Human Computer Interaction.</p>
+            <p>YnoVo is a tech-based company registered in Kenya to enhance Human-Computer Interaction.</p>
+            <p>We offer technology based services such as;</p>
+            <ul>
+                <li>Custom Software Development -We design, build, and deploy scalable Software solutions to transform business digital presence, from web applications to mobile and desktop softwares</li>
+                <br>
+                <li>Website-design & Development - We virtualize your business concept,make it appealing,user-friendly, equally responsive to enhance virtual presence.</li>
+                <br>
+                <li>Computer Networks and cybersecurity - Building physical infrastructure,local Networks and establishing security features to your digital space and data through risk assessments and security protocols</li>
+                <br>
+                <li>Consultancy - We offer a wide range of tech based consultancy services for informed decision making</li>
+            <br>
+            <p>We are building partnership,we offer flexibility and options that improves on the initial concept, the focus is to drive businesses forward.</p>
+            </ul>
+                   
         </section>
-        
-        <section id="services" class="section" style="display:none;">
+        <!--Creating navigation links for services offered -->
+        <section id="services" class="section hidden">
             <h2>Our Services</h2>
             <ul>
-                <li><a href="#software-engineering" onclick="showSection('software-engineering')">Software Engineering</a></li>
+                <li><a href="#software-development" onclick="showSection('software-development')">Software Development</a></li>
                 <li><a href="#web-development" onclick="showSection('web-development')">Web Development</a></li>
                 <li><a href="#securing-networks" onclick="showSection('securing-networks')">Securing Networks</a></li>
                 <li><a href="#consulting" onclick="showSection('consulting')">Consulting</a></li>
             </ul>
         </section>
-        
-        <section id="software-engineering" class="section" style="display:none;">
-            <h2>Software Engineering</h2>
-            <p>Details about software engineering services.</p>
-            <img src="Technology.png" alt="Software Engineering">
+
+        <section id="software-development" class="section hidden">
+            <h2>Software Development</h2>
+            <p>We offer comprehensive software development services including custom software development, maintenance, and support.</p>
+                <li>From client's idea into a concept</li>
+                <br>
+                <li>Develope concept design.</li>
+                <br>
+                <li>Developing the design concept using relevant technologies</li>
+                <br>
+                <li>Testing and deploying a finished product that exceeds client's expectation.</li>
+            <img src="/images/Technology.png" alt="Software Development">
             <nav>
                 <a href="#web-development" onclick="showSection('web-development')">Next: Web Development</a>
             </nav>
         </section>
-        
-        <section id="web-development" class="section" style="display:none;">
+
+        <section id="web-development" class="section hidden">
             <h2>Web Development</h2>
-            <p>Details about web development services.</p>
-            <img src="path/to/web-development.jpg" alt="Web Development">
+            <p>Our web development services include designing and developing responsive websites and web applications tailored to your business needs.</p>
+            <img src="/images/web-development.jpg" alt="Web Development">
             <nav>
-                <a href="#software-engineering" onclick="showSection('software-engineering')">Previous: Software Engineering</a> | 
+                <a href="#software-development" onclick="showSection('software-development')">Previous: Software Development</a> | 
                 <a href="#securing-networks" onclick="showSection('securing-networks')">Next: Securing Networks</a>
             </nav>
         </section>
-        
-        <section id="securing-networks" class="section" style="display:none;">
+
+        <section id="securing-networks" class="section hidden">
             <h2>Securing Networks</h2>
-            <p>Details about securing networks services.</p>
-            <img src="path/to/securing-networks.jpg" alt="Securing Networks">
+            <p>We provide robust network security solutions to protect your business from cyber threats and ensure the integrity of your data.</p>
+            <img src="/images/securing-networks.jpg" alt="Securing Networks">
             <nav>
                 <a href="#web-development" onclick="showSection('web-development')">Previous: Web Development</a> | 
                 <a href="#consulting" onclick="showSection('consulting')">Next: Consulting</a>
             </nav>
         </section>
-        
-        <section id="consulting" class="section" style="display:none;">
+
+        <section id="consulting" class="section hidden">
             <h2>Consulting</h2>
-            <p>Details about consulting services.</p>
-            <img src="path/to/consulting.jpg" alt="Consulting">
+            <p>Our consulting services help you strategize and implement effective IT solutions to meet your business goals.</p>
+            <img src="/images/consulting.jpg" alt="Consulting">
             <nav>
                 <a href="#securing-networks" onclick="showSection('securing-networks')">Previous: Securing Networks</a>
             </nav>
-        
         </section>
-            
-        <section id="Contact_Us" class="section" style="display:none;">
-            <h2>Contact_Us</h2>
-                <p><strong>Tel:</strong> +254 723684353</p>
-                <p><strong>Email:</strong> <a href="mailto:info@ynovosoftwares.co.ke">info@ynovosoftwares.co.ke</a></p>
-                <p><strong>Direction:</strong> China Center 17th floor Suite 15Red, Ngong Road - Nairobi, Kenya</p>
-            </section>
 
+        <section id="contact_us" class="section hidden">
+            <h2>Contact Us</h2>
+            <p><strong>Tel:</strong> +254 723684353</p>
+            <p><strong>Email:</strong> <a href="mailto:info@ynovosoftwares.co.ke">info@ynovosoftwares.co.ke</a></p>
+            <p><strong>Direction:</strong> China Center 17th floor Suite 15Red, Ngong Road - Nairobi, Kenya</p>
         </section>
         
-        <section id="booking" class="section" style="display:none;">
-            <h2>Booking</h2>
-            <form id="booking-form" method="POST" action="/booking">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                
-                <label for="gender">Gender:</label>
-                <div style="display: flex; align-items: center;">
-                    <input type="radio" id="male" name="gender" value="male" required>
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female" required>
-                    <label for="female">Female</label>
+        <section id="booking" class="section hidden">
+            <div class="container">
+                <h2>Booking</h2>
+                <div id="notification" class="notification hidden"></div>
+        
+                <!-- Booking Form -->
+                <form id="booking-form">
+                    <!-- Step 1: Personal and Service Info -->
+                    <div id="step-1" class="step active">
+                        <!-- Personal Details Section -->
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="phone_number">Phone Number:</label>
+                            <input type="tel" id="phone_number" name="phone_number" placeholder="Enter your phone number" required>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="" disabled selected>Select your gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <!--Creating a grouped list of services offered-->
+                        <div class="form-group">
+                            <label for="service">Service:</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <br>
+                                <option value="software-engineering">Software Engineering</option>
+                                <br>
+                                <option value="web-development">Web Development</option>
+                                <br>
+                                <option value="network-security">Network Security</option>
+                                <br>
+                                <option value="consulting">Consulting</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-group full-width">
+                            <label for="details">Details:</label>
+                            <textarea id="details" name="details" rows="4" placeholder="Provide more details about your booking" required></textarea>
+                        </div>
+        
+                        <!-- Navigation Buttons -->
+                        <div class="button-group">
+                            <button type="submit" id="submitBooking" class="btn-primary">Submit Booking</button>
+                            <button type="button" class="btn-primary" id="nextBtn" onclick="goToStep(2)">Next: Payment</button>
+                        </div>
+                    </div>
+                </form>
+        
+                <!-- Step 2: Payment Info and Submission -->
+                <div id="step-2" class="step hidden">
+                    <div class="form-group">
+                        <label for="payment-method">Select Payment Method:</label>
+                        <select id="payment-method" name="payment-method" required onchange="showPaymentForm()">
+                            <option value="" disabled selected>Select your payment method</option>
+                            <option value="credit-card">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="bank-transfer">Bank Transfer</option>
+                            <option value="mpesa">Mpesa</option>
+                        </select>
+                    </div>
+                    <!-- Payment Forms will be dynamically inserted here -->
+                    <div id="payment-info-container"></div>
+        
+                    <!-- Navigation Buttons -->
+                    <div class="button-group">
+                        <button type="button" class="btn-primary" id="prevBtn" onclick="goToStep(1)">Back</button>
+                        <button type="reset" class="btn-primary">Reset</button>
+                    </div>
                 </div>
-                
-                <label for="home-phone">Home Phone:</label>
-                <input type="tel" id="home-phone" name="homePhone" placeholder="Enter your home phone number">
-                
-                <label for="office-phone">Office Phone:</label>
-                <input type="tel" id="office-phone" name="officePhone" placeholder="Enter your office phone number">
-                
-                <label for="service">Service:</label>
-                <select id="service" name="service" required>
-                    <option value="" disabled selected>Select a service</option>
-                    <option value="software-engineering">Software Engineering</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="securing-networks">Securing Networks</option>
-                    <option value="consulting">Consulting</option>
-                </select>
-                
-                <button type="submit">Book Now</button>
-                <button type="reset">Reset</button>
-            </form>
+            </div>
         </section>
         
-        <section id="enquiries" class="section" style="display:none;">
-            <h2>Make an Enquiry</h2>
-            <form id="enquiry-form">
+        <section id="enquiries" class="section hidden">
+            <h2>Enquiries</h2>
+            <div id="notification-enquiries" class="notification hidden"></div>
+            <form id="enquiries-form">
                 <label for="enquiry-name">Name:</label>
-                <input type="text" id="enquiry-name" name="enquiry-name" placeholder="Enter your full name" required>
-                
+                <input type="text" id="enquiry-name" name="name" placeholder="Enter your name" required>
+
                 <label for="enquiry-email">Email:</label>
-                <input type="email" id="enquiry-email" name="enquiry-email" placeholder="Enter your Email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Enter your message" required>></textarea>
-                
+                <input type="email" id="enquiry-email" name="email" placeholder="Enter your email address" required>
+
+                <label for="enquiry-message">Message:</label>
+                <textarea id="enquiry-message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+
                 <button type="submit">Submit</button>
                 <button type="reset">Reset</button>
             </form>
         </section>
-        
-        <section id="clients" class="section" style="display:none;">
-            <h2>Client Management</h2>
-            <p>Manage your clients and their projects efficiently.</p>
-            <div id="client-list"></div>
+
+        <section id="login" class="section hidden">
+            <h2>Sign up/Sign in</h2>
+            <div id="notification-login" class="notification hidden"></div>
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" placeholder="Enter your email address" required>
+
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit">Login</button>
+                <button type="reset">Reset</button>
+                <p><a href="#register" onclick="showSection('register')">Don't have an account? Register here.</a></p>
+            </form>
+        </section>
+
+        <section id="register" class="section hidden">
+            <h2>Register</h2>
+            <form id="register-form">
+                <label for="register-username">Username:</label>
+                <input type="text" id="register-username" name="username" placeholder="Enter your full name" required>
+
+                <label for="register-email">Email:</label>
+                <input type="email" id="register-email" name="email" placeholder="Enter your email address" required>
+
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit">Register</button>
+                <button type="reset">Reset</button>
+                <p><a href="#login" onclick="showSection('login')">Already have an account? Login here.</a></p>
+            </form>
+        </section>
+
+        <section id="clients" class="section hidden">
+            <h2>Our Clients</h2>
+            <p>We take pride in working with a diverse range of clients across various industries. Here are some of the companies and organizations we've had the pleasure of collaborating with:</p>
+            <ul>
+                <li><strong>ABC Corp:</strong> A leading tech company specializing in innovative software solutions.</li>
+                <li><strong>XYZ Ltd:</strong> A global leader in cybersecurity and data protection.</li>
+                <li><strong>123 Enterprises:</strong> A major player in e-commerce and online retail.</li>
+                <li><strong>Global Solutions:</strong> An international firm providing consulting and advisory services.</li>
+                <li><strong>Future Tech:</strong> A startup focused on cutting-edge technology and software development.</li>
+            </ul>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2024 YnoVo Software Developers Ltd. All rights reserved.</p>
+    </footer>
     
     <script src="script.js"></script>
 </body>

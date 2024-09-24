@@ -1,59 +1,167 @@
+/* General notification style */
+.notification {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    width: 300px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Notification types */
+.notification.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.notification.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Show the notification */
+.notification.show {
+    opacity: 1;
+}
+
+/* Hide the notification (animation) */
+.notification.hidden {
+    opacity: 0;
+}
+
 /* General styles */
 body {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 100;
-    padding: 100;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
     text-align: center;
+    background-color: #e7ace7; /* Light background for better contrast */
+    text-align: justify;
+    height: 100%;
+}
+
+/*using flexbox to stick the footer to the bottom*/
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*This is to ensure the main content grows and pushes the footer down*/
+.main-content{
+    flex: 1;
+}
+/* footer styling*/
+footer{
+    background: #7e107e;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    
+    position: relative; /*Optional: Adjust based on other elements*/
+
+}
+footer p {
+    color: rgb(231, 230, 230); /* dim golden color */
+    font-weight: bold; /* Optional: Make the text bold */
 }
 
 header {
-    background-color: #7e107e6b;
-    color: #fff;
-    padding: 10px 0;
+    background-color: #7e107e; /* Slightly darker background color */
+    color:white;
+    padding: 20px 0; /* Increased padding for better spacing */
     text-align: center;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0; /* Remove default margin */
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 20px; /* Increased spacing between navigation items */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold; /* Added font weight for better visibility */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover for better user feedback */
 }
 
 section {
-    padding: 20px;
+    padding: 30px; /* Increased padding for better content spacing */
+    background-color: #fff; /* White background for sections for contrast */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    margin: 20px auto; /* Centering the section with margin */
+    max-width: 600px; /* Adjusted max width for a smaller, more compact form */
 }
 
 h2 {
     border-bottom: 2px solid #333;
     padding-bottom: 10px;
+    margin-bottom: 20px; /* Added margin below heading */
+    font-size: 1.5em; /* Increased font size for headings */
+    color: #333; /* Darker text color for better readability */
 }
 
+/* Image sizing for section images */
+
+.section img {
+    width: 80%; /*Image takes 80% of the container width*/
+    max-width: 600px; /*Restricting maximum width for larger screens*/
+    height: auto; /*Maintaining aspect ration*/
+    margin: 20px auto;/* center the image with some margin*/
+    display: block;
+}
+
+.message-column {
+    white-space: pre-wrap;  /* Preserves spaces and line breaks */
+    word-wrap: break-word;  /* Breaks long words if necessary */
+    max-height: 150px;      /* Optional: Limits the height of the cell */
+    overflow-y: auto;       /* Allows scrolling if content exceeds height */
+}
 /* Form styles */
 form {
-    max-width: 300px; /* Limit the form width */
+    max-width: 50%; /* Reduce the form's width to 50% of its container */
     margin: 0 auto; /* Center the form */
     display: flex;
     flex-direction: column;
+    background-color: #f9f9f9; /* Light background for forms */
+    padding: 1px; /* Reduce padding inside the form to shrink height */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for form */
 }
 
 label {
     margin: 10px 0 5px;
+    font-weight: bold; /* Added font weight for better visibility */
 }
 
 input, select, textarea {
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 8px; /* Reduce padding for smaller height */
+    margin-bottom: 10px; /* Reduced margin for better spacing */
     border: 1px solid #ccc;
-    width: 100%;
+    border-radius: 4px; /* Rounded corners for form elements */
+    width: 100%; /* Full width of the container */
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
@@ -61,11 +169,220 @@ button {
     background-color: #e0f17b;
     color: #ce0909;
     border: none;
-    padding: 5px;
+    padding: 10px 20px; /* Increased padding for better button size */
     cursor: pointer;
-    margin-top: 10px; /* Ensure there's space between the button and the last input */
+    margin-top: 10px;
+    border-radius: 4px; /* Rounded corners for button */
+    font-size: 1em; /* Increased font size for better readability */
 }
 
 button:hover {
-    background-color: #7e107e6b;
+    background-color: #d1e1a7; /* Slightly darker color on hover */
+}
+
+.visible {
+    display: block;
+}
+
+/* Hide elements by default */
+.hidden {
+    display: none;
+}
+
+/* Show elements */
+.show {
+    display: block;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 600px; /* Adjusted max width for container */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Gender Options */
+.gender-options label {
+    margin-right: 10px;
+}
+
+/* Payment Methods Section */
+.payment-methods {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for a consistent look */
+}
+
+/* Payment Info Section */
+.payment-info {
+    background-color: #f9f9f9; /* Consistent background color with other sections */
+    padding: 20px; /* Consistent padding with form */
+    border-radius: 8px; /* Rounded corners for consistency */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for form elements */
+    margin-bottom: 20px; /* Add space between payment sections */
+}
+
+/* Show payment info for selected option */
+.payment-info.show {
+    display: block; /* Show when needed */
+}
+
+/* Button Group Styles */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px; /* Add spacing above the button group */
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: #007bff; /* Consistent primary button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px; /* Consistent border-radius */
+    cursor: pointer;
+    font-size: 1em; /* Consistent font size */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em; /* Consistent font size */
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Darker shade for hover effect */
+}
+
+/* Form Input Styles */
+input[type="text"], input[type="email"], input[type="number"], select, textarea {
+    width: 100%; /* Full width of the container */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding and border are included in the total width */
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #007bff; /* Consistent focus border color */
+    outline: none; /* Remove default outline */
+}
+
+/* Form Label */
+label {
+    font-weight: bold; /* Bold labels for readability */
+    margin-bottom: 5px; /* Space below labels */
+    display: block; /* Labels should be block elements for consistent spacing */
+}
+
+.section.hidden {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.step.hidden {
+    display: none;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between; /* Distribute space between buttons */
+    margin-top: 20px; /* Add some margin on top for spacing */
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#nextBtn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#submitBtn {
+    background-color: #007bff; /* Primary color for the submit button */
+    color: #fff;
 }
