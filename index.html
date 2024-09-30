@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YnoVo Software Developers</title>
+    <title>YnoVo Software Developers Ltd</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,14 +14,12 @@
         <li><a href="#home" onclick="showSection('home')">Home</a></li>
         <li><a href="#about_us" onclick="showSection('about_us')">About Us</a></li>
         <li><a href="#services" onclick="showSection('services')">Services</a></li>
-        <li><a href="#booking" onclick="checkLogin('booking')">Booking</a></li>
-        <li><a href="#enquiries" onclick="checkLogin('enquiries')">Enquiries</a></li>
+        <li><a href="#booking"  onclick="checkLogin('booking')">Booking</a></li>
+        <li><a href="#enquiries" onclick="showSection('enquiries')">Enquiries</a></li>
         <li><a href="#contact_us" onclick="showSection('contact_us')">Contact Us</a></li>
         <li><a href="#clients" onclick="showSection('clients')">Clients</a></li>
-        <!-- Sign up/Sign in link, initially visible -->
-        <li><a href="#register" id="register-link" onclick="showSection('register')">register/Sign in</a></li>
-        <!-- Logout link, initially hidden -->
-        <li><a href="#logout" id="logout-link" class="hidden" onclick="logoutUser()">Logout</a></li> <!--hiding the logout section and oly will appear after registration-->
+        <li><a href="#register" id="register-link" onclick="showSection('register')">Sign up/Sign in</a></li>
+        <li><a href="#logout" id="logout-link" class="hidden" >Logout</a></li>
 
 
     </ul>
@@ -35,30 +33,17 @@
         <section id="home" class="section hidden">
             <h2>Home</h2>
             <p>YnoVo is a home of experienced Software Developers, committed to providing top-notch software solutions tailored to your preference.</p>
-            <p>Boasting of an experienced synchronized Team, who are keen on excellence as an intended goal</p> 
-            <p>Client's detailed information is the foundation upon which every project,is anchored.</p>
-            <p>We welcome you to interact with our page; you can book or make an inquiry about our services and effect payment electronically.</p>
+            <p>Ever ready and synchronized, our team is keen on excellence with professional Web-Development.</p> 
+            <p>Client's detailed information is the foundation upon which everything is anchored.</p>
+            <p>We welcome you to interact with our page; you can book or make an inquiry about our services.</p>
         </section>
 
         <section id="about_us" class="section hidden">
             <h2>About Us</h2>
             <p>We are a dedicated team of software developers committed to excellence.</p>
             <p>YnoVo is a tech-based company registered in Kenya to enhance Human-Computer Interaction.</p>
-            <p>We offer technology based services such as;</p>
-            <ul>
-                <li>Custom Software Development -We design, build, and deploy scalable Software solutions to transform business digital presence, from web applications to mobile and desktop softwares</li>
-                <br>
-                <li>Website-design & Development - We virtualize your business concept,make it appealing,user-friendly, equally responsive to enhance virtual presence.</li>
-                <br>
-                <li>Computer Networks and cybersecurity - Building physical infrastructure,local Networks and establishing security features to your digital space and data through risk assessments and security protocols</li>
-                <br>
-                <li>Consultancy - We offer a wide range of tech based consultancy services for informed decision making</li>
-            <br>
-            <p>We are building partnership,we offer flexibility and options that improves on the initial concept, the focus is to drive businesses forward.</p>
-            </ul>
-                   
         </section>
-        <!--Creating navigation links for services offered -->
+
         <section id="services" class="section hidden">
             <h2>Our Services</h2>
             <ul>
@@ -72,13 +57,6 @@
         <section id="software-development" class="section hidden">
             <h2>Software Development</h2>
             <p>We offer comprehensive software development services including custom software development, maintenance, and support.</p>
-                <li>From client's idea into a concept</li>
-                <br>
-                <li>Develope concept design.</li>
-                <br>
-                <li>Developing the design concept using relevant technologies</li>
-                <br>
-                <li>Testing and deploying a finished product that exceeds client's expectation.</li>
             <img src="/images/Technology.png" alt="Software Development">
             <nav>
                 <a href="#web-development" onclick="showSection('web-development')">Next: Web Development</a>
@@ -154,18 +132,14 @@
                                 <option value="female">Female</option>
                             </select>
                         </div>
-                        <!--Creating a grouped list of services offered-->
+        
                         <div class="form-group">
                             <label for="service">Service:</label>
                             <select id="service" name="service" required>
                                 <option value="" disabled selected>Select a service</option>
-                                <br>
                                 <option value="software-engineering">Software Engineering</option>
-                                <br>
                                 <option value="web-development">Web Development</option>
-                                <br>
                                 <option value="network-security">Network Security</option>
-                                <br>
                                 <option value="consulting">Consulting</option>
                             </select>
                         </div>
@@ -175,11 +149,8 @@
                             <textarea id="details" name="details" rows="4" placeholder="Provide more details about your booking" required></textarea>
                         </div>
         
-                        <!-- Navigation Buttons -->
-                        <div class="button-group">
-                            <button type="submit" id="submitBooking" class="btn-primary">Submit Booking</button>
-                            <button type="button" class="btn-primary" id="nextBtn" onclick="goToStep(2)">Next: Payment</button>
-                        </div>
+                        <button type="submit" id="submitBooking" class="btn-primary">Submit Booking</button>
+
                     </div>
                 </form>
         
@@ -187,7 +158,7 @@
                 <div id="step-2" class="step hidden">
                     <div class="form-group">
                         <label for="payment-method">Select Payment Method:</label>
-                        <select id="payment-method" name="payment-method" required onchange="showPaymentForm()">
+                        <select id="payment-method" name="payment-method" required onchange="showPaymentForm(this.value)">
                             <option value="" disabled selected>Select your payment method</option>
                             <option value="credit-card">Credit Card</option>
                             <option value="paypal">PayPal</option>
@@ -213,6 +184,9 @@
             <form id="enquiries-form">
                 <label for="enquiry-name">Name:</label>
                 <input type="text" id="enquiry-name" name="name" placeholder="Enter your name" required>
+
+                <label for="enquiry-phone">Phone Number:</label>
+                <input type="tel" id="enquiry-phone" name="phone_number" placeholder="Enter your phone number" required>
 
                 <label for="enquiry-email">Email:</label>
                 <input type="email" id="enquiry-email" name="email" placeholder="Enter your email address" required>
@@ -246,6 +220,9 @@
             <form id="register-form">
                 <label for="register-username">Username:</label>
                 <input type="text" id="register-username" name="username" placeholder="Enter your full name" required>
+
+                <label for="register-phone">Phone Number:</label>
+                <input type="tel" id="register-phone" name="phone_number" placeholder="Enter your phone number" required>
 
                 <label for="register-email">Email:</label>
                 <input type="email" id="register-email" name="email" placeholder="Enter your email address" required>
