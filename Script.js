@@ -628,7 +628,7 @@ function showPaymentForm(paymentMethod) {
                     <div id="paypal-info" class="payment-info">
                           <div class="form-group">
                           <p style="font-weight: bold; font-size: larger;">
-                    For your invoice, <a href="https://www.paypal.com/invoice/p/#WWES2ZJC35BGMVWK" target="_blank">click here to Proceed with Payments</a>.
+                    For your invoice, <a href="https://www.paypal.com/invoice/p/#UGVGVHB4VCUQWHAV     " target="_blank">click here to Proceed with Payments</a>.
                          </p>
                           </div>
                         <div class="form-group">
@@ -816,3 +816,8 @@ async function handlePaymentResponse(response, paymentType) {
         showNotification(`${paymentType} payment failed due to unexpected error. Please try again.`, 'error');
     }
 }
+
+
+
+
+
