@@ -9,7 +9,7 @@
     
   },
   "keywords": [],
-  "author": "",
+  "author": "Ali Abdallah Abdul",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
