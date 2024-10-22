@@ -49,8 +49,15 @@ body {
     padding: 0;
     text-align: center;
     background-color: #e7ace7; /* Light background for better contrast */
+    background-image: url(images/background7.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     text-align: justify;
-    height: 100%;
+    height: auto;
+    width: 100%;
+    overflow-y: auto;
 }
 
 /*using flexbox to stick the footer to the bottom*/
