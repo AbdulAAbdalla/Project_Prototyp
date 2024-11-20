@@ -295,7 +295,7 @@ module.exports = { encrypt, decrypt };
 // Routes
 // Serve HTML files
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'home.html'));
 });
 app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));

@@ -118,7 +118,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: whitesmoke;
     text-decoration: none;
     font-weight: bold; /* Added font weight for better visibility */
 }
@@ -132,10 +132,10 @@ nav ul li a:hover {
 
 section {
     padding: 30px; /* Increased padding for better content spacing */
-    background-color: #fff; /* White background for sections for contrast */
+    background-color: whitesmoke; /* White background for sections for contrast */
     border-radius: 8px; /* Rounded corners for a modern look */
-    margin: 20px auto; /* Centering the section with margin */
-    max-width: 600px; /* Adjusted max width for a smaller, more compact form */
+    margin: 50px auto; /* Centering the section with margin */
+    max-width: 850px; /* Adjusted max width for a smaller, more compact form */
 }
 
 h2 {
@@ -149,7 +149,7 @@ h2 {
 /* Image sizing for section images */
 
 .section img {
-    width: 80%; /*Image takes 80% of the container width*/
+    width: 50%; /*Image takes 80% of the container width*/
     max-width: 600px; /*Restricting maximum width for larger screens*/
     height: auto; /*Maintaining aspect ration*/
     margin: 20px auto;/* center the image with some margin*/
@@ -160,7 +160,7 @@ h2 {
     white-space: pre-wrap;  /* Preserves spaces and line breaks */
     word-wrap: break-word;  /* Breaks long words if necessary */
     max-height: 150px;      /* Optional: Limits the height of the cell */
-    overflow-y: auto;       /* Allows scrolling if content exceeds height */
+    overflow-y: auto;       /* Allows scrolling if content exceeds height*/ 
 }
 /* Form styles */
 form {
@@ -409,3 +409,4 @@ button[type="submit"] {
     background-color: #007bff; /* Primary color for the submit button */
     color: #fff;
 }
+
