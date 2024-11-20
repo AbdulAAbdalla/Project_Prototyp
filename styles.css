@@ -49,12 +49,12 @@ body {
     padding: 0;
     text-align: center;
     background-color: #e7ace7; /* Light background for better contrast */
-    background-image: url(images/background7.jpg);
+    background-image: url(images/background6.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    text-align: justify;
+    text-align: justify; 
     height: auto;
     width: 100%;
     overflow-y: auto;
@@ -73,7 +73,7 @@ body{
 }
 /* footer styling*/
 footer{
-    background: #7e107e;
+   
     text-align: center;
     padding: 10px 0;
     width: 100%;
@@ -87,10 +87,23 @@ footer p {
 }
 
 header {
-    background-color: #7e107e; /* Slightly darker background color */
-    color:white;
-    padding: 20px 0; /* Increased padding for better spacing */
+    background-color: #dee67252; /* Slightly darker background color */
+    color: white;
+    padding: 5px 0; /* Increased padding for better spacing */
     text-align: center;
+    overflow: visible;
+    margin: 10px;
+}
+.logo img{
+    float: left; /*this aligns the logo to the left*/
+    margin: 15px 10px;
+    margin-left: 10px;
+    margin-top: -65px;/*this is to adjust the logo upwards to fit well*/
+    max-width: 150px;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+  
 }
 
 nav ul {
@@ -111,7 +124,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    text-decoration: underline; /* Underline on hover for better user feedback */
+    /*text-decoration: underline; /* Underline on hover for better user feedback */
+    background: blueviolet;
+    transition: 0.5s;
+    text-transform: uppercase;
 }
 
 section {
