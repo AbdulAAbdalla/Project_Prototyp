@@ -44,7 +44,8 @@
 
 /* General styles */
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -102,8 +103,8 @@ header {
     max-width: 150px;
     height: auto;
     display: block;
-    vertical-align: middle;
-  
+
+
 }
 
 nav ul {
@@ -115,6 +116,7 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 20px; /* Increased spacing between navigation items */
+    
 }
 
 nav ul li a {
@@ -144,6 +146,10 @@ h2 {
     margin-bottom: 20px; /* Added margin below heading */
     font-size: 1.5em; /* Increased font size for headings */
     color: #333; /* Darker text color for better readability */
+}
+
+#about_us p{
+    text-align: justify;
 }
 
 /* Image sizing for section images */
